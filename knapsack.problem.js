@@ -38,8 +38,8 @@
 
             for (let i = 1; i < maxIndex; i++) {
                 const resArr = this.#arrFitredByBinMap(arrItems, i);
-                const resPrice =  resArr.reduce((r, c) => r + c.priceFull, 0);
-                const resWeight =  resArr.reduce((r, c) => r + c.wight, 0);
+                const resPrice =  resArr.reduce((r, { priceFull }) => r + priceFull, 0);
+                const resWeight =  resArr.reduce((r, { wight }) => r + wight, 0);
 
                 if (resPrice > bestPrice && resWeight <= this.#capacity) {
                     bestPrice = resPrice;
